@@ -102,7 +102,7 @@ export const ProjectsSection = () => {
       tags: ["Next.js","Tailwind","TypeScript", "firebase", "Node.js"],
       links: { demo: "https://vehicle-rent-ao3c82oli-darshangowda9152-gmailcoms-projects.vercel.app", repo: "https://github.com/darshangowdanan/Truck_Rental_2025" },
       image:
-        "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&q=80&w=1000",
+        "/image.png",
     },
     {
       title: "E-Commerce Website",
@@ -240,7 +240,7 @@ export const SkillsSection = () => {
     {
       title: "DevOps & Tools",
       icon: <Cpu className="w-6 h-6 text-indigo-500" />,
-      skills: ["Docker", "AWS", "Git", "CI/CD", "Linux", "Jest"],
+      skills: ["Docker", "AWS", "Git", "CI/CD" ],
     },
   ];
 
@@ -318,6 +318,11 @@ export const AboutSection = () => {
     },
   ];
 
+  function handleBlogClick(e) {
+    e.preventDefault();
+    alert("comming soon...");
+  }
+
   return (
     <div
       className="py-20 bg-white dark:bg-slate-800 transition-colors duration-300"
@@ -373,7 +378,7 @@ export const AboutSection = () => {
 
             <div className="space-y-6">
               {blogs.map((blog, index) => (
-                <a key={index} href={blog.link} className="block group">
+                <a key={index} href={blog.link} className="block group" onClick={handleBlogClick}>
                   <div className="flex flex-col gap-1">
                     <h4 className="text-lg font-bold text-gray-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                       {blog.title}
@@ -448,7 +453,7 @@ export const ContactSection = () => {
                     href="mailto:hello@example.com"
                     className="font-semibold text-lg hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                   >
-                    darshangowda9152@example.com
+                    darshangowda9152@gmail.com
                   </a>
                 </div>
               </div>
@@ -549,9 +554,10 @@ export const Main = () => {
       {
         name: "GitHub",
         icon: <Github size={20} />,
-        url: "#",
+        url: "https://github.com/darshangowdanan",
         color: "group-hover:text-gray-900 dark:group-hover:text-white",
         bgHover: "hover:bg-gray-200 dark:hover:bg-gray-800",
+        target: "_blank",
       },
       {
         name: "LinkedIn",
@@ -559,13 +565,15 @@ export const Main = () => {
         url: "https://www.linkedin.com/in/darshan-gowda2003",
         color: "group-hover:text-blue-600",
         bgHover: "hover:bg-blue-50 dark:hover:bg-blue-900/30",
+        target: "_blank",
       },
       {
         name: "Email",
         icon: <Mail size={20} />,
-        url: "mailto:darshangowda9152@gmail.com",
+        url: "#contact",
         color: "group-hover:text-red-500",
         bgHover: "hover:bg-red-50 dark:hover:bg-red-900/30",
+        target: "_self",
       },
       {
         name: "Resume",
@@ -573,6 +581,7 @@ export const Main = () => {
         url: "#",
         color: "group-hover:text-emerald-500",
         bgHover: "hover:bg-emerald-50 dark:hover:bg-emerald-900/30",
+        target: "_blank",
       },
     ],
   };
@@ -660,6 +669,7 @@ export const Main = () => {
                   href={social.url}
                   className={`group p-3 text-slate-400 transition-all duration-300 rounded-xl ${social.bgHover} border border-transparent hover:border-slate-700`}
                   aria-label={social.name}
+                  target={social.target}
                 >
                   <span
                     className={`transition-colors duration-300 ${social.color}`}
