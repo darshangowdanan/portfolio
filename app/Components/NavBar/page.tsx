@@ -27,6 +27,7 @@ const Nav = () => {
               <a
                 href={link.href}
                 className="text-slate-300 transition-all duration-300 hover:text-white relative group flex items-center justify-center"
+                target="_self"
               >
                 {/* Mobile: Icons with hover scale and glow */}
                 <span className="md:hidden p-2 transition-transform duration-300 group-hover:scale-125 group-hover:text-white group-active:scale-95">
